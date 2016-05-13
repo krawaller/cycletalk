@@ -1,0 +1,113 @@
+
+.stream {
+  height: 50px;
+  background-color: green;
+  display: flex;
+  margin-top: 1em;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.description {
+  width: 120px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.6s ease;
+  opacity: 0;
+}
+
+.started > .description {
+  opacity: 1;
+}
+
+.events {
+  background-color: yellow;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.started > .events {
+  opacity: 1;
+}
+
+.events:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  margin-top: 25px;
+  border-top: 1px dashed #CCC;
+}
+
+.event {
+  border-radius: 10px;
+  border: 1px solid black;
+  display: inline;
+  position: absolute;
+  background-color: transparent;
+  top: 15px;
+  left: -25px;
+  transition: left 8s linear;
+  background-color: white;
+  padding: 0 3px;
+  z-index: 10;
+}
+
+.event.active {
+  left: 105%;
+}
+
+.code {
+  position: absolute;
+  font-family: monospace;
+  right: 24px;
+  font-size: 19px;
+  color: #FFF;
+  bottom: 13px;
+  transition: right 0.6s ease, bottom 0.6s ease, color 0.6s ease, font-size 0.6s ease;
+}
+
+.started .code {
+  font-size: 12px;
+  right: 4px;
+  color: #000;
+  bottom: 1px;
+}
+
+.id {
+  font-size: 29px;
+  top: 8px;
+  color: #FFF;
+  left: 9px;
+  position: absolute;
+  font-family: monospace;
+  transition: left 0.6s ease, top 0.6s ease, font-size 0.6s ease, color 0.6s ease;
+  z-index: 5;
+}
+
+.started .id {
+  top: 0;
+  left: 124px;
+  font-size: 12px;
+  color: #000;
+}
+
+.description input {
+  max-width: 100px;
+}
+
+#bluesquare {
+  background-color: blue;
+  color: white;
+}
